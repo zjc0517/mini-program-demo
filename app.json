@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/adoption/adoption",
+    "pages/myranch/myranch",
+    "pages/game/game",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4CAF50",
+    "navigationBarTitleText": "绒光公社",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#4CAF50",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/adoption/adoption",
+        "text": "认养",
+        "iconPath": "static/icons/adoption.png",
+        "selectedIconPath": "static/icons/adoption-active.png"
+      },
+      {
+        "pagePath": "pages/myranch/myranch",
+        "text": "我的牧场",
+        "iconPath": "static/icons/ranch.png",
+        "selectedIconPath": "static/icons/ranch-active.png"
+      },
+      {
+        "pagePath": "pages/game/game",
+        "text": "互动",
+        "iconPath": "static/icons/game.png",
+        "selectedIconPath": "static/icons/game-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "static/icons/profile.png",
+        "selectedIconPath": "static/icons/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

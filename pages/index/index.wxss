@@ -1,0 +1,234 @@
+/* 首页样式 */
+
+.container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 轮播图 */
+.banner-swiper {
+  height: 400rpx;
+  width: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 牧场信息卡片 */
+.ranch-info-card {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  color: white;
+  box-shadow: 0 4rpx 20rpx rgba(76, 175, 80, 0.3);
+}
+
+.ranch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.ranch-name {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+}
+
+.temperature {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+
+.weather {
+  font-size: 28rpx;
+}
+
+.ranch-stats {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20rpx;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 48rpx;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  opacity: 0.9;
+}
+
+/* 区块样式 */
+.section {
+  background-color: white;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 20rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-more {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 羊只列表 */
+.sheep-scroll {
+  white-space: nowrap;
+}
+
+.sheep-list {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.sheep-card {
+  width: 320rpx;
+  margin-right: 20rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.sheep-image {
+  width: 100%;
+  height: 240rpx;
+}
+
+.sheep-info {
+  padding: 20rpx;
+}
+
+.sheep-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.sheep-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.sheep-status {
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 20rpx;
+}
+
+.sheep-status.available {
+  background-color: #e8f5e9;
+  color: #4CAF50;
+}
+
+.sheep-status.adopted {
+  background-color: #fff3e0;
+  color: #ff9800;
+}
+
+.sheep-breed {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 15rpx;
+}
+
+.sheep-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sheep-price {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.adopt-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.adopt-btn.adopted {
+  background-color: #ccc;
+}
+
+/* 活动列表 */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card {
+  display: flex;
+  background-color: #f9f9f9;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.activity-image {
+  width: 200rpx;
+  height: 160rpx;
+}
+
+.activity-info {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.activity-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.activity-desc {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 底部占位 */
+.bottom-space {
+  height: 40rpx;
+}

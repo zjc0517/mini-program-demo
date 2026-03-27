@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper class="banner-swiper" indicator-dots="true" autoplay="true" interval="5000">
+    <swiper-item wx:for="{{bannerList}}" wx:key="id" bindtap="onBannerTap" data-index="{{index}}">
+      <image class="banner-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 牧场信息 -->
+  <view class="ranch-info-card">
+    <view class="ranch-header">
+      <text class="ranch-name">{{ranchInfo.name}}</text>
+      <view class="weather-info">
+        <text class="temperature">{{ranchInfo.temperature}}°C</text>
+        <text class="weather">{{ranchInfo.weather}}</text>
+      </view>
+    </view>
+    <view class="ranch-stats">
+      <view class="stat-item">
+        <text class="stat-value">{{ranchInfo.sheepCount}}</text>
+        <text class="stat-label">只羊</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{ranchInfo.area}}</text>
+        <text class="stat-label">草场</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐羊只 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">推荐认养</text>
+      <text class="section-more" bindtap="onMoreTap">更多 ></text>
+    </view>
+    
+    <scroll-view class="sheep-scroll" scroll-x="true">
+      <view class="sheep-list">
+        <view class="sheep-card" wx:for="{{sheepList}}" wx:key="id" bindtap="onSheepCardTap" data-id="{{item.id}}">
+          <image class="sheep-image" src="{{item.image}}" mode="aspectFill"></image>
+          <view class="sheep-info">
+            <view class="sheep-name-row">
+              <text class="sheep-name">{{item.name}}</text>
+              <text class="sheep-status {{item.status}}">{{item.status === 'available' ? '可认养' : '已认养'}}</text>
+            </view>
+            <text class="sheep-breed">{{item.breed}} · {{item.age}}</text>
+            <view class="sheep-price-row">
+              <text class="sheep-price">¥{{item.price}}</text>
+              <button class="adopt-btn {{item.status}}" size="mini" bindtap="onAdoptTap" data-id="{{item.id}}">
+                {{item.status === 'available' ? '立即认养' : '查看详情'}}
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 活动专区 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">活动专区</text>
+    </view>
+    
+    <view class="activity-list">
+      <view class="activity-card" wx:for="{{activityList}}" wx:key="id" bindtap="onActivityTap" data-id="{{item.id}}">
+        <image class="activity-image" src="{{item.image}}" mode="aspectFill"></image>
+        <view class="activity-info">
+          <text class="activity-title">{{item.title}}</text>
+          <text class="activity-desc">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-space"></view>
+</view>

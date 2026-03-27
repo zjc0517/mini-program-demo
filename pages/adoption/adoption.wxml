@@ -1,0 +1,114 @@
+<view class="container">
+  <!-- 图片画廊 -->
+  <view class="gallery-section">
+    <swiper class="gallery-swiper" indicator-dots="true" bindchange="onImageChange">
+      <swiper-item wx:for="{{gallery}}" wx:key="*this">
+        <image class="gallery-image" src="{{item}}" mode="aspectFill" bindtap="onPreviewImage" data-src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+    <view class="image-indicator">{{currentImageIndex + 1}} / {{gallery.length}}</view>
+  </view>
+
+  <!-- 羊只基本信息 -->
+  <view class="info-section">
+    <view class="basic-info">
+      <text class="sheep-name">{{sheepInfo.name}}</text>
+      <view class="sheep-tags">
+        <text class="tag">{{sheepInfo.breed}}</text>
+        <text class="tag">{{sheepInfo.age}}</text>
+        <text class="tag">{{sheepInfo.weight}}</text>
+      </view>
+    </view>
+    
+    <view class="ranch-info">
+      <text class="ranch-label">所属牧场</text>
+      <text class="ranch-name">{{sheepInfo.ranch}}</text>
+    </view>
+    
+    <view class="birth-info">
+      <text class="birth-label">出生日期</text>
+      <text class="birth-date">{{sheepInfo.birthDate}}</text>
+    </view>
+  </view>
+
+  <!-- 认养权益 -->
+  <view class="benefits-section">
+    <view class="section-title">认养权益</view>
+    <view class="benefits-list">
+      <view class="benefit-item" wx:for="{{sheepInfo.benefits}}" wx:key="*this">
+        <view class="benefit-icon">✓</view>
+        <text class="benefit-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 认养说明 -->
+  <view class="notice-section">
+    <view class="section-title">认养说明</view>
+    <view class="notice-content">
+      <text class="notice-item">1. 认养周期为{{sheepInfo.adoptionPeriod}}个月</text>
+      <text class="notice-item">2. 认养期间可获得定期照片、视频更新</text>
+      <text class="notice-item">3. 认养到期后可兑换实物产品或续约</text>
+      <text class="notice-item">4. 认养权益可转让（需平台审核）</text>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="price-section">
+      <text class="price-label">认养价格</text>
+      <text class="price-value">¥{{sheepInfo.price}}</text>
+    </view>
+    <button class="adopt-btn" bindtap="onShowAdoptionModal">立即认养</button>
+  </view>
+
+  <!-- 认养弹窗 -->
+  <view class="modal-mask" wx:if="{{showAdoptionModal}}" bindtap="onCloseAdoptionModal"></view>
+  <view class="adoption-modal" wx:if="{{showAdoptionModal}}">
+    <view class="modal-header">
+      <text class="modal-title">确认认养</text>
+      <text class="modal-close" bindtap="onCloseAdoptionModal">×</text>
+    </view>
+    
+    <view class="modal-content">
+      <view class="form-item">
+        <text class="form-label">您的姓名</text>
+        <input class="form-input" placeholder="请输入姓名" data-field="name" bindinput="onInputChange" value="{{adoptionForm.name}}"></input>
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">联系电话</text>
+        <input class="form-input" placeholder="请输入手机号" type="number" data-field="phone" bindinput="onInputChange" value="{{adoptionForm.phone}}"></input>
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">收货地址</text>
+        <textarea class="form-textarea" placeholder="请输入详细地址（用于寄送认养产品）" data-field="address" bindinput="onInputChange" value="{{adoptionForm.address}}"></textarea>
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">留言（选填）</text>
+        <textarea class="form-textarea" placeholder="给牧场主留言..." data-field="message" bindinput="onInputChange" value="{{adoptionForm.message}}"></textarea>
+      </view>
+      
+      <view class="order-summary">
+        <view class="summary-row">
+          <text class="summary-label">认养羊只</text>
+          <text class="summary-value">{{sheepInfo.name}}</text>
+        </view>
+        <view class="summary-row">
+          <text class="summary-label">认养周期</text>
+          <text class="summary-value">{{sheepInfo.adoptionPeriod}}个月</text>
+        </view>
+        <view class="summary-row total">
+          <text class="summary-label">应付金额</text>
+          <text class="summary-value price">¥{{sheepInfo.price}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="modal-footer">
+      <button class="submit-btn" bindtap="onSubmitAdoption">提交申请</button>
+    </view>
+  </view>
+</view>
