@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="header">
+    <text class="title">绒光公社</text>
+    <text class="subtitle">治愈系数字牧场</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="center"><text>加载中...</text></view>
+  <view wx:elif="{{error}}" class="center">
+    <text>加载失败</text>
+    <button bindtap="onRefresh" size="mini">重试</button>
+  </view>
+  <view wx:else class="sheep-grid">
+    <view class="sheep-card" wx:for="{{sheepList}}" wx:key="sheep_id" bindtap="onSheepTap" data-id="{{item.sheep_id}}">
+      <view class="sheep-name">{{item.name}}</view>
+      <view class="sheep-breed">{{item.breed}}</view>
+      <view class="sheep-price">¥{{item.price}}</view>
+      <view class="sheep-status {{item.status}}">{{item.status === 'available' ? '可认养' : '已认养'}}</view>
+    </view>
+  </view>
+  <view wx:if="{{!loading && sheepList.length === 0}}" class="center"><text>暂无羊只</text></view>
+</view>

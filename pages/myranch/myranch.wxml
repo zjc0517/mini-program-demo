@@ -1,0 +1,13 @@
+<view class="container">
+  <text class="page-title">我的认养</text>
+  <view wx:if="{{loading}}" class="center"><text>加载中...</text></view>
+  <view wx:elif="{{empty}}" class="center"><text>还没有认养记录</text></view>
+  <view wx:else class="adoption-list">
+    <view class="adoption-card" wx:for="{{adoptions}}" wx:key="adoption_id">
+      <text class="aid">{{item.adoption_id}}</text>
+      <text class="sheep-id">{{item.sheep_id}}</text>
+      <text class="status">{{item.status}}</text>
+      <button size="mini" bindtap="onViewTrace" data-sheep-id="{{item.sheep_id}}">查看溯源</button>
+    </view>
+  </view>
+</view>

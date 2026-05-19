@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="scan-area">
+    <button bindtap="onScan" type="primary" size="default">扫码溯源</button>
+  </view>
+  <view wx:if="{{loading}}" class="center"><text>加载中...</text></view>
+  <view wx:elif="{{sheepId && empty}}" class="center"><text>暂无溯源数据</text></view>
+  <view wx:elif="{{sheepId}}" class="trace-list">
+    <text class="sheep-label">羊只: {{sheepId}}</text>
+    <view class="stage-card" wx:for="{{stages}}" wx:key="id">
+      <text class="stage-name">{{item.stage}}</text>
+      <text class="stage-loc">{{item.location}}</text>
+      <text class="stage-time">{{item.timestamp}}</text>
+    </view>
+  </view>
+  <view wx:else class="center"><text>扫描二维码查看溯源信息</text></view>
+</view>

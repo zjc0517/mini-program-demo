@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/adoption/adoption",
+    "pages/myranch/myranch",
+    "pages/trace/trace"
+  ],
+  "window": {
+    "navigationBarTitleText": "绒光公社",
+    "navigationBarBackgroundColor": "#4A7C59",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#4A7C59",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页", "iconPath": "static/home.png", "selectedIconPath": "static/home-active.png" },
+      { "pagePath": "pages/myranch/myranch", "text": "我的牧场", "iconPath": "static/ranch.png", "selectedIconPath": "static/ranch-active.png" },
+      { "pagePath": "pages/trace/trace", "text": "溯源", "iconPath": "static/trace.png", "selectedIconPath": "static/trace-active.png" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

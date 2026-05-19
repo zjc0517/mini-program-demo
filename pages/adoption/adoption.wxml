@@ -1,0 +1,17 @@
+<view class="container">
+  <view wx:if="{{loading}}" class="center"><text>加载中...</text></view>
+  <view wx:elif="{{!sheep}}" class="center"><text>羊只不存在</text></view>
+  <view wx:else>
+    <view class="sheep-detail">
+      <text class="name">{{sheep.name}}</text>
+      <text class="breed">{{sheep.breed}} | {{sheep.ranch_id}}</text>
+      <text class="price">¥{{sheep.price}}</text>
+    </view>
+    <view class="form">
+      <input placeholder="您的姓名" data-field="adopter_name" bindinput="onInputChange" />
+      <input placeholder="手机号" type="number" data-field="adopter_phone" bindinput="onInputChange" />
+      <input placeholder="收货地址" data-field="adopter_address" bindinput="onInputChange" />
+      <button bindtap="onSubmit" loading="{{submitting}}" type="primary">确认认养</button>
+    </view>
+  </view>
+</view>
